@@ -7,3 +7,116 @@ Processing by Rails::WelcomeController#index as */*
 Completed 200 OK in 37ms (Views: 24.6ms | ActiveRecord: 0.0ms | Allocations: 2295)
 
 
+Started GET "/" for ::1 at 2020-11-03 22:24:21 -0300
+Processing by Rails::WelcomeController#index as */*
+  Rendering /Users/gabrielgrazionale/.asdf/installs/ruby/2.7.1/lib/ruby/gems/2.7.0/gems/railties-6.0.3.4/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/gabrielgrazionale/.asdf/installs/ruby/2.7.1/lib/ruby/gems/2.7.0/gems/railties-6.0.3.4/lib/rails/templates/rails/welcome/index.html.erb (Duration: 23.1ms | Allocations: 179)
+Completed 200 OK in 56ms (Views: 43.9ms | ActiveRecord: 0.0ms | Allocations: 753)
+
+
+Started GET "/" for ::1 at 2020-11-03 22:24:27 -0300
+Processing by Rails::WelcomeController#index as */*
+  Rendering /Users/gabrielgrazionale/.asdf/installs/ruby/2.7.1/lib/ruby/gems/2.7.0/gems/railties-6.0.3.4/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/gabrielgrazionale/.asdf/installs/ruby/2.7.1/lib/ruby/gems/2.7.0/gems/railties-6.0.3.4/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.4ms | Allocations: 8)
+Completed 200 OK in 2ms (Views: 1.1ms | ActiveRecord: 0.0ms | Allocations: 246)
+
+
+Started GET "/" for ::1 at 2020-11-03 22:24:28 -0300
+Processing by Rails::WelcomeController#index as */*
+  Rendering /Users/gabrielgrazionale/.asdf/installs/ruby/2.7.1/lib/ruby/gems/2.7.0/gems/railties-6.0.3.4/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/gabrielgrazionale/.asdf/installs/ruby/2.7.1/lib/ruby/gems/2.7.0/gems/railties-6.0.3.4/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.6ms | Allocations: 8)
+Completed 200 OK in 3ms (Views: 2.0ms | ActiveRecord: 0.0ms | Allocations: 245)
+
+
+Started GET "/" for ::1 at 2020-11-03 22:29:36 -0300
+Processing by Rails::WelcomeController#index as */*
+  Rendering /Users/gabrielgrazionale/.asdf/installs/ruby/2.7.1/lib/ruby/gems/2.7.0/gems/railties-6.0.3.4/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/gabrielgrazionale/.asdf/installs/ruby/2.7.1/lib/ruby/gems/2.7.0/gems/railties-6.0.3.4/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.7ms | Allocations: 7)
+Completed 200 OK in 2ms (Views: 1.6ms | ActiveRecord: 0.0ms | Allocations: 243)
+
+
+Started GET "/" for ::1 at 2020-11-03 22:29:38 -0300
+Processing by Rails::WelcomeController#index as */*
+  Rendering /Users/gabrielgrazionale/.asdf/installs/ruby/2.7.1/lib/ruby/gems/2.7.0/gems/railties-6.0.3.4/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/gabrielgrazionale/.asdf/installs/ruby/2.7.1/lib/ruby/gems/2.7.0/gems/railties-6.0.3.4/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.4ms | Allocations: 7)
+Completed 200 OK in 3ms (Views: 1.2ms | ActiveRecord: 0.0ms | Allocations: 243)
+
+
+Started GET "/" for ::1 at 2020-11-03 22:36:15 -0300
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/gabrielgrazionale/.asdf/installs/ruby/2.7.1/lib/ruby/gems/2.7.0/gems/railties-6.0.3.4/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/gabrielgrazionale/.asdf/installs/ruby/2.7.1/lib/ruby/gems/2.7.0/gems/railties-6.0.3.4/lib/rails/templates/rails/welcome/index.html.erb (Duration: 1.7ms | Allocations: 8)
+Completed 200 OK in 10ms (Views: 5.6ms | ActiveRecord: 0.0ms | Allocations: 355)
+
+
+Started GET "/favicon.ico" for ::1 at 2020-11-03 22:36:15 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+actionpack (6.0.3.4) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.4) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+railties (6.0.3.4) lib/rails/engine.rb:527:in `call'
+puma (4.3.6) lib/puma/configuration.rb:228:in `call'
+puma (4.3.6) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.6) lib/puma/server.rb:472:in `process_client'
+puma (4.3.6) lib/puma/server.rb:328:in `block in run'
+puma (4.3.6) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+ActionMailer::Base#mail: processed outbound mail in 3.6ms
+ActionMailer::Base#mail: processed outbound mail in 0.7ms
+ActionMailer::Base#mail: processed outbound mail in 1.4ms
+ActionMailer::Base#mail: processed outbound mail in 4.7ms
+ActionMailer::Base#mail: processed outbound mail in 5.9ms
+ActionMailer::Base#mail: processed outbound mail in 4.4ms
+ActionMailer::Base#mail: processed outbound mail in 0.7ms
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT VERSION()[0m
+  ↳ (erb):38:in `migration_template'
+  [1m[35m (62.1ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (6.6ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (2.5ms)[0m  [1m[34mSELECT pg_try_advisory_lock(7491930552856037820)[0m
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to DeviseTokenAuthCreateUsers (20201104022928)
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(7491930552856037820)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(7491930552856037820)[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to DeviseTokenAuthCreateUsers (20201104022928)
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT pg_advisory_unlock(7491930552856037820)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_try_advisory_lock(7491930552856037820)[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to DeviseTokenAuthCreateUsers (20201104022928)
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(7491930552856037820)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(7491930552856037820)[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to DeviseTokenAuthCreateUsers (20201104022928)
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (14.3ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "provider" character varying DEFAULT 'email' NOT NULL, "uid" character varying DEFAULT '' NOT NULL, "encrypted_password" character varying DEFAULT '' NOT NULL, "reset_password_token" character varying, "reset_password_sent_at" timestamp, "allow_password_change" boolean DEFAULT FALSE, "remember_created_at" timestamp, "confirmation_token" character varying, "confirmed_at" timestamp, "confirmation_sent_at" timestamp, "unconfirmed_email" character varying, "name" character varying, "email" character varying, "profile" integer DEFAULT 1, "tokens" json, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (2.5ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_email" ON "users"  ("email")[0m
+  [1m[35m (3.2ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_uid_and_provider" ON "users"  ("uid", "provider")[0m
+  [1m[35m (7.2ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_reset_password_token" ON "users"  ("reset_password_token")[0m
+  [1m[35m (1.5ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_confirmation_token" ON "users"  ("confirmation_token")[0m
+  [1m[36mprimary::SchemaMigration Create (1.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20201104022928"]]
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (1.1ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2020-11-04 02:36:42.434714"], ["updated_at", "2020-11-04 02:36:42.434714"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(7491930552856037820)[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (2.6ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) AND "users"."provider" = $2 LIMIT $3[0m  [["email", "test@test.com"], ["provider", "email"], ["LIMIT", 1]]
+  [1m[36mUser Create (38.8ms)[0m  [1m[32mINSERT INTO "users" ("uid", "encrypted_password", "name", "email", "profile", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["uid", "test@test.com"], ["encrypted_password", "$2a$12$oZvskgSqbhlT63JSFJrRLujqPqjVeO6Ul9m/YQXq88ZmdVN.F3.Ai"], ["name", "Test"], ["email", "test@test.com"], ["profile", 0], ["created_at", "2020-11-04 02:37:07.357837"], ["updated_at", "2020-11-04 02:37:07.357837"]]
+  [1m[35m (60.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
