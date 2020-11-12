@@ -14,4 +14,11 @@ RSpec.describe Category, type: :model do
   # Este matcher ainda tem a capacidade de verificar se a validação
   # é case insensitive, como fizemos agora
   it { is_expected.to validate_uniqueness_of(:name).case_insensitive }
+
+  # Queremos uma associação has_many de Category para ProductCategory com remoção de 
+  # dependentes. Ou seja, quando Category for removida, todos os registros 
+  # ProductCategory associados a ela também serão. Além disso, estamos adicionando uma 
+  # associação has_many direto com Product através da associação com ProductCategory
+  it { is_expected.to have_many(:product_categories).dependent(:destroy) }
+  it { is_expected.to have_many(:products).through(:product_categories) }
 end

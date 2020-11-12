@@ -9,4 +9,11 @@ RSpec.describe Product, type: :model do
   it { is_expected.to validate_presence_of(:price) }
   it { is_expected.to validate_numericality_of(:price).is_greater_than(0) }
   it { is_expected.to belong_to :productable }
+
+  # Queremos uma associação has_many de Product para ProductCategory com remoção de 
+  # dependentes. Ou seja, quando Product for removido, todos os registros 
+  # ProductCategory associados a ele também serão. Além disso, estamos adicionando uma 
+  # associação has_many direto com Category através da associação com ProductCategory
+  it { is_expected.to have_many(:product_categories).dependent(:destroy) }
+  it { is_expected.to have_many(:categories).through(:product_categories) }
 end
