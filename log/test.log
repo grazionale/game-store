@@ -2615,3 +2615,913 @@ FOREIGN KEY ("product_id")
   [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
   [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
   [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (14.8ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "schema_sha1"]]
+  [1m[35m (19.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (6.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCategory Exists? (5.1ms)[0m  [1m[34mSELECT 1 AS one FROM "categories" WHERE LOWER("categories"."name") = LOWER($1) LIMIT $2[0m  [["name", ""], ["LIMIT", 1]]
+  [1m[36mCategory Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "categories" WHERE "categories"."name" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (6.6ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCategory Load (6.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" ORDER BY "categories"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (6.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCategory Create (4.7ms)[0m  [1m[32mINSERT INTO "categories" ("created_at", "updated_at") VALUES ($1, $2) RETURNING "id"[0m  [["created_at", "2020-11-13 11:31:10.749201"], ["updated_at", "2020-11-13 11:31:10.749201"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCategory Update (3.1ms)[0m  [1m[33mUPDATE "categories" SET "name" = $1, "updated_at" = $2 WHERE "categories"."id" = $3[0m  [["name", "dummy value"], ["updated_at", "2020-11-13 11:31:10.762357"], ["id", 4]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mCategory Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "categories" WHERE LOWER("categories"."name") = LOWER($1) LIMIT $2[0m  [["name", "dummy value"], ["LIMIT", 1]]
+  [1m[36mCategory Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "categories" WHERE LOWER("categories"."name") = LOWER($1) LIMIT $2[0m  [["name", "DUMMY VALUE"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCoupon Exists? (1.2ms)[0m  [1m[34mSELECT 1 AS one FROM "coupons" WHERE "coupons"."code" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mCoupon Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "coupons" WHERE "coupons"."code" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCoupon Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "coupons" WHERE LOWER("coupons"."code") = LOWER($1) LIMIT $2[0m  [["code", ""], ["LIMIT", 1]]
+  [1m[36mCoupon Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "coupons" WHERE "coupons"."code" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCoupon Load (0.6ms)[0m  [1m[34mSELECT "coupons".* FROM "coupons" ORDER BY "coupons"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCoupon Create (1.0ms)[0m  [1m[32mINSERT INTO "coupons" ("created_at", "updated_at") VALUES ($1, $2) RETURNING "id"[0m  [["created_at", "2020-11-13 11:31:10.820200"], ["updated_at", "2020-11-13 11:31:10.820200"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCoupon Update (0.3ms)[0m  [1m[33mUPDATE "coupons" SET "code" = $1, "updated_at" = $2 WHERE "coupons"."id" = $3[0m  [["code", "dummy value"], ["updated_at", "2020-11-13 11:31:10.822583"], ["id", 4]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mCoupon Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "coupons" WHERE LOWER("coupons"."code") = LOWER($1) LIMIT $2[0m  [["code", "dummy value"], ["LIMIT", 1]]
+  [1m[36mCoupon Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "coupons" WHERE LOWER("coupons"."code") = LOWER($1) LIMIT $2[0m  [["code", "DUMMY VALUE"], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCoupon Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "coupons" WHERE "coupons"."code" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCoupon Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "coupons" WHERE "coupons"."code" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCoupon Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "coupons" WHERE "coupons"."code" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mCoupon Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "coupons" WHERE "coupons"."code" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mCoupon Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "coupons" WHERE "coupons"."code" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mCoupon Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "coupons" WHERE "coupons"."code" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCoupon Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "coupons" WHERE "coupons"."code" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCoupon Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "coupons" WHERE "coupons"."code" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mCoupon Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "coupons" WHERE "coupons"."code" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mCoupon Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "coupons" WHERE "coupons"."code" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mCoupon Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "coupons" WHERE "coupons"."code" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mCoupon Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "coupons" WHERE "coupons"."code" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCoupon Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "coupons" WHERE "coupons"."code" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mSystemRequirement Exists? (11.7ms)[0m  [1m[34mSELECT 1 AS one FROM "system_requirements" WHERE LOWER("system_requirements"."name") = LOWER($1) LIMIT $2[0m  [["name", "Basic 1"], ["LIMIT", 1]]
+  [1m[36mSystemRequirement Create (1.7ms)[0m  [1m[32mINSERT INTO "system_requirements" ("name", "operational_system", "storage", "processor", "memory", "video_board", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "Basic 1"], ["operational_system", "Catalina (10.15)"], ["storage", "5GB"], ["processor", "AMD Ryzen 7"], ["memory", "2GB"], ["video_board", "N/A"], ["created_at", "2020-11-13 11:31:11.014082"], ["updated_at", "2020-11-13 11:31:11.014082"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mGame Create (6.6ms)[0m  [1m[32mINSERT INTO "games" ("mode", "release_date", "developer", "system_requirement_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["mode", 2], ["release_date", "2020-06-01 00:00:00"], ["developer", "Braga-Leiria"], ["system_requirement_id", 28], ["created_at", "2020-11-13 11:31:11.017858"], ["updated_at", "2020-11-13 11:31:11.017858"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mProduct Exists? (14.0ms)[0m  [1m[34mSELECT 1 AS one FROM "products" WHERE LOWER("products"."name") = LOWER($1) LIMIT $2[0m  [["name", ""], ["LIMIT", 1]]
+  [1m[36mProduct Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "products" WHERE "products"."name" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mSystemRequirement Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "system_requirements" WHERE LOWER("system_requirements"."name") = LOWER($1) LIMIT $2[0m  [["name", "Basic 2"], ["LIMIT", 1]]
+  [1m[36mSystemRequirement Create (0.4ms)[0m  [1m[32mINSERT INTO "system_requirements" ("name", "operational_system", "storage", "processor", "memory", "video_board", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "Basic 2"], ["operational_system", "CentOS 7"], ["storage", "5GB"], ["processor", "AMD Ryzen 7"], ["memory", "2GB"], ["video_board", "N/A"], ["created_at", "2020-11-13 11:31:11.049016"], ["updated_at", "2020-11-13 11:31:11.049016"]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mGame Create (0.9ms)[0m  [1m[32mINSERT INTO "games" ("mode", "release_date", "developer", "system_requirement_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["mode", 3], ["release_date", "2020-06-01 00:00:00"], ["developer", "da Aldeia S.A."], ["system_requirement_id", 29], ["created_at", "2020-11-13 11:31:11.050742"], ["updated_at", "2020-11-13 11:31:11.050742"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mProduct Load (0.5ms)[0m  [1m[34mSELECT "products".* FROM "products" ORDER BY "products"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mProduct Create (1.5ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "price", "productable_type", "productable_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Product 2"], ["description", "Iusto vel voluptatem. Iure id sed. Molestias nostrum quisquam."], ["price", "276.04"], ["productable_type", "Game"], ["productable_id", 26], ["created_at", "2020-11-13 11:31:11.055170"], ["updated_at", "2020-11-13 11:31:11.055170"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mGame Load (6.6ms)[0m  [1m[34mSELECT "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 26], ["LIMIT", 1]]
+  [1m[36mProduct Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "products" WHERE LOWER("products"."name") = LOWER($1) LIMIT $2[0m  [["name", "Product 2"], ["LIMIT", 1]]
+  [1m[36mProduct Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "products" WHERE LOWER("products"."name") = LOWER($1) LIMIT $2[0m  [["name", "pRODUCT 2"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mSystemRequirement Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "system_requirements" WHERE LOWER("system_requirements"."name") = LOWER($1) LIMIT $2[0m  [["name", "Basic 3"], ["LIMIT", 1]]
+  [1m[36mSystemRequirement Create (0.4ms)[0m  [1m[32mINSERT INTO "system_requirements" ("name", "operational_system", "storage", "processor", "memory", "video_board", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "Basic 3"], ["operational_system", "Windows 8.1"], ["storage", "5GB"], ["processor", "AMD Ryzen 7"], ["memory", "2GB"], ["video_board", "N/A"], ["created_at", "2020-11-13 11:31:11.075121"], ["updated_at", "2020-11-13 11:31:11.075121"]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mGame Create (0.4ms)[0m  [1m[32mINSERT INTO "games" ("mode", "release_date", "developer", "system_requirement_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["mode", 1], ["release_date", "2020-06-01 00:00:00"], ["developer", "Castro S.A."], ["system_requirement_id", 30], ["created_at", "2020-11-13 11:31:11.077427"], ["updated_at", "2020-11-13 11:31:11.077427"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mProduct Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "products" WHERE LOWER("products"."name") = LOWER($1) LIMIT $2[0m  [["name", "Product 3"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mSystemRequirement Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "system_requirements" WHERE LOWER("system_requirements"."name") = LOWER($1) LIMIT $2[0m  [["name", "Basic 4"], ["LIMIT", 1]]
+  [1m[36mSystemRequirement Create (0.4ms)[0m  [1m[32mINSERT INTO "system_requirements" ("name", "operational_system", "storage", "processor", "memory", "video_board", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "Basic 4"], ["operational_system", "CentOS 7"], ["storage", "5GB"], ["processor", "AMD Ryzen 7"], ["memory", "2GB"], ["video_board", "N/A"], ["created_at", "2020-11-13 11:31:11.085868"], ["updated_at", "2020-11-13 11:31:11.085868"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mGame Create (0.5ms)[0m  [1m[32mINSERT INTO "games" ("mode", "release_date", "developer", "system_requirement_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["mode", 3], ["release_date", "2020-06-01 00:00:00"], ["developer", "Almada-Vieira"], ["system_requirement_id", 31], ["created_at", "2020-11-13 11:31:11.087379"], ["updated_at", "2020-11-13 11:31:11.087379"]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mProduct Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "products" WHERE LOWER("products"."name") = LOWER($1) LIMIT $2[0m  [["name", "Product 4"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mSystemRequirement Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "system_requirements" WHERE LOWER("system_requirements"."name") = LOWER($1) LIMIT $2[0m  [["name", "Basic 5"], ["LIMIT", 1]]
+  [1m[36mSystemRequirement Create (0.8ms)[0m  [1m[32mINSERT INTO "system_requirements" ("name", "operational_system", "storage", "processor", "memory", "video_board", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "Basic 5"], ["operational_system", "Catalina (10.15)"], ["storage", "5GB"], ["processor", "AMD Ryzen 7"], ["memory", "2GB"], ["video_board", "N/A"], ["created_at", "2020-11-13 11:31:11.098018"], ["updated_at", "2020-11-13 11:31:11.098018"]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mGame Create (0.4ms)[0m  [1m[32mINSERT INTO "games" ("mode", "release_date", "developer", "system_requirement_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["mode", 3], ["release_date", "2020-06-01 00:00:00"], ["developer", "de Borba, Bernardes e Moraes"], ["system_requirement_id", 32], ["created_at", "2020-11-13 11:31:11.100939"], ["updated_at", "2020-11-13 11:31:11.100939"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mProduct Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "products" WHERE LOWER("products"."name") = LOWER($1) LIMIT $2[0m  [["name", "Product 5"], ["LIMIT", 1]]
+  [1m[36mProduct Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "products" WHERE LOWER("products"."name") = LOWER($1) LIMIT $2[0m  [["name", "Product 5"], ["LIMIT", 1]]
+  [1m[36mProduct Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "products" WHERE LOWER("products"."name") = LOWER($1) LIMIT $2[0m  [["name", "Product 5"], ["LIMIT", 1]]
+  [1m[36mProduct Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "products" WHERE LOWER("products"."name") = LOWER($1) LIMIT $2[0m  [["name", "Product 5"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mSystemRequirement Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "system_requirements" WHERE LOWER("system_requirements"."name") = LOWER($1) LIMIT $2[0m  [["name", "Basic 6"], ["LIMIT", 1]]
+  [1m[36mSystemRequirement Create (0.3ms)[0m  [1m[32mINSERT INTO "system_requirements" ("name", "operational_system", "storage", "processor", "memory", "video_board", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "Basic 6"], ["operational_system", "openSUSE Leap 15.1"], ["storage", "5GB"], ["processor", "AMD Ryzen 7"], ["memory", "2GB"], ["video_board", "N/A"], ["created_at", "2020-11-13 11:31:11.110377"], ["updated_at", "2020-11-13 11:31:11.110377"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mGame Create (0.6ms)[0m  [1m[32mINSERT INTO "games" ("mode", "release_date", "developer", "system_requirement_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["mode", 2], ["release_date", "2020-06-01 00:00:00"], ["developer", "Dorneles, Marcondes e Ramalho"], ["system_requirement_id", 33], ["created_at", "2020-11-13 11:31:11.111841"], ["updated_at", "2020-11-13 11:31:11.111841"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mProduct Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "products" WHERE LOWER("products"."name") = LOWER($1) LIMIT $2[0m  [["name", "Product 6"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mSystemRequirement Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "system_requirements" WHERE LOWER("system_requirements"."name") = LOWER($1) LIMIT $2[0m  [["name", "Basic 7"], ["LIMIT", 1]]
+  [1m[36mSystemRequirement Create (0.3ms)[0m  [1m[32mINSERT INTO "system_requirements" ("name", "operational_system", "storage", "processor", "memory", "video_board", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "Basic 7"], ["operational_system", "High Sierra (10.13)"], ["storage", "5GB"], ["processor", "AMD Ryzen 7"], ["memory", "2GB"], ["video_board", "N/A"], ["created_at", "2020-11-13 11:31:11.120621"], ["updated_at", "2020-11-13 11:31:11.120621"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mGame Create (0.3ms)[0m  [1m[32mINSERT INTO "games" ("mode", "release_date", "developer", "system_requirement_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["mode", 1], ["release_date", "2020-06-01 00:00:00"], ["developer", "Ribeiro, Amoreira e Beltrão"], ["system_requirement_id", 34], ["created_at", "2020-11-13 11:31:11.121769"], ["updated_at", "2020-11-13 11:31:11.121769"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mSystemRequirement Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "system_requirements" WHERE LOWER("system_requirements"."name") = LOWER($1) LIMIT $2[0m  [["name", "Basic 8"], ["LIMIT", 1]]
+  [1m[36mSystemRequirement Create (0.4ms)[0m  [1m[32mINSERT INTO "system_requirements" ("name", "operational_system", "storage", "processor", "memory", "video_board", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "Basic 8"], ["operational_system", "Windows Server 2016"], ["storage", "5GB"], ["processor", "AMD Ryzen 7"], ["memory", "2GB"], ["video_board", "N/A"], ["created_at", "2020-11-13 11:31:11.126243"], ["updated_at", "2020-11-13 11:31:11.126243"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mGame Create (0.4ms)[0m  [1m[32mINSERT INTO "games" ("mode", "release_date", "developer", "system_requirement_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["mode", 1], ["release_date", "2020-06-01 00:00:00"], ["developer", "da Mota, Coqueiro e Modesto"], ["system_requirement_id", 35], ["created_at", "2020-11-13 11:31:11.127644"], ["updated_at", "2020-11-13 11:31:11.127644"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSystemRequirement Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "system_requirements" WHERE LOWER("system_requirements"."name") = LOWER($1) LIMIT $2[0m  [["name", ""], ["LIMIT", 1]]
+  [1m[36mSystemRequirement Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "system_requirements" WHERE "system_requirements"."name" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSystemRequirement Load (0.2ms)[0m  [1m[34mSELECT "system_requirements".* FROM "system_requirements" ORDER BY "system_requirements"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mSystemRequirement Create (0.2ms)[0m  [1m[32mINSERT INTO "system_requirements" ("created_at", "updated_at") VALUES ($1, $2) RETURNING "id"[0m  [["created_at", "2020-11-13 11:31:11.140263"], ["updated_at", "2020-11-13 11:31:11.140263"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mSystemRequirement Update (0.3ms)[0m  [1m[33mUPDATE "system_requirements" SET "name" = $1, "updated_at" = $2 WHERE "system_requirements"."id" = $3[0m  [["name", "dummy value"], ["updated_at", "2020-11-13 11:31:11.141442"], ["id", 36]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mSystemRequirement Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "system_requirements" WHERE LOWER("system_requirements"."name") = LOWER($1) LIMIT $2[0m  [["name", "dummy value"], ["LIMIT", 1]]
+  [1m[36mSystemRequirement Exists? (1.2ms)[0m  [1m[34mSELECT 1 AS one FROM "system_requirements" WHERE LOWER("system_requirements"."name") = LOWER($1) LIMIT $2[0m  [["name", "DUMMY VALUE"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSystemRequirement Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "system_requirements" WHERE "system_requirements"."name" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mSystemRequirement Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "system_requirements" WHERE "system_requirements"."name" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSystemRequirement Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "system_requirements" WHERE "system_requirements"."name" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mSystemRequirement Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "system_requirements" WHERE "system_requirements"."name" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSystemRequirement Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "system_requirements" WHERE "system_requirements"."name" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mSystemRequirement Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "system_requirements" WHERE "system_requirements"."name" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSystemRequirement Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "system_requirements" WHERE "system_requirements"."name" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mSystemRequirement Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "system_requirements" WHERE "system_requirements"."name" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSystemRequirement Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "system_requirements" WHERE "system_requirements"."name" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mSystemRequirement Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "system_requirements" WHERE "system_requirements"."name" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (2.7ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" IS NULL AND "users"."provider" = $1 LIMIT $2[0m  [["provider", "email"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" IS NULL AND "users"."provider" = $1 LIMIT $2[0m  [["provider", "email"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" IS NULL AND "users"."provider" = $1 LIMIT $2[0m  [["provider", "email"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.8ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "schema_sha1"]]
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCategory Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "categories" WHERE LOWER("categories"."name") = LOWER($1) LIMIT $2[0m  [["name", ""], ["LIMIT", 1]]
+  [1m[36mCategory Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "categories" WHERE "categories"."name" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" ORDER BY "categories"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCategory Create (0.5ms)[0m  [1m[32mINSERT INTO "categories" ("created_at", "updated_at") VALUES ($1, $2) RETURNING "id"[0m  [["created_at", "2020-11-13 11:38:10.086339"], ["updated_at", "2020-11-13 11:38:10.086339"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCategory Update (0.5ms)[0m  [1m[33mUPDATE "categories" SET "name" = $1, "updated_at" = $2 WHERE "categories"."id" = $3[0m  [["name", "dummy value"], ["updated_at", "2020-11-13 11:38:10.088229"], ["id", 5]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mCategory Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "categories" WHERE LOWER("categories"."name") = LOWER($1) LIMIT $2[0m  [["name", "dummy value"], ["LIMIT", 1]]
+  [1m[36mCategory Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "categories" WHERE LOWER("categories"."name") = LOWER($1) LIMIT $2[0m  [["name", "DUMMY VALUE"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCoupon Exists? (1.2ms)[0m  [1m[34mSELECT 1 AS one FROM "coupons" WHERE "coupons"."code" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mCoupon Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "coupons" WHERE "coupons"."code" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCoupon Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "coupons" WHERE LOWER("coupons"."code") = LOWER($1) LIMIT $2[0m  [["code", ""], ["LIMIT", 1]]
+  [1m[36mCoupon Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "coupons" WHERE "coupons"."code" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCoupon Load (0.3ms)[0m  [1m[34mSELECT "coupons".* FROM "coupons" ORDER BY "coupons"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCoupon Create (0.5ms)[0m  [1m[32mINSERT INTO "coupons" ("created_at", "updated_at") VALUES ($1, $2) RETURNING "id"[0m  [["created_at", "2020-11-13 11:38:10.142253"], ["updated_at", "2020-11-13 11:38:10.142253"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCoupon Update (0.6ms)[0m  [1m[33mUPDATE "coupons" SET "code" = $1, "updated_at" = $2 WHERE "coupons"."id" = $3[0m  [["code", "dummy value"], ["updated_at", "2020-11-13 11:38:10.144197"], ["id", 5]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mCoupon Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "coupons" WHERE LOWER("coupons"."code") = LOWER($1) LIMIT $2[0m  [["code", "dummy value"], ["LIMIT", 1]]
+  [1m[36mCoupon Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "coupons" WHERE LOWER("coupons"."code") = LOWER($1) LIMIT $2[0m  [["code", "DUMMY VALUE"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCoupon Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "coupons" WHERE "coupons"."code" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCoupon Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "coupons" WHERE "coupons"."code" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCoupon Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "coupons" WHERE "coupons"."code" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mCoupon Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "coupons" WHERE "coupons"."code" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mCoupon Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "coupons" WHERE "coupons"."code" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mCoupon Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "coupons" WHERE "coupons"."code" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCoupon Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "coupons" WHERE "coupons"."code" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCoupon Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "coupons" WHERE "coupons"."code" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mCoupon Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "coupons" WHERE "coupons"."code" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mCoupon Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "coupons" WHERE "coupons"."code" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mCoupon Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "coupons" WHERE "coupons"."code" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mCoupon Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "coupons" WHERE "coupons"."code" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCoupon Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "coupons" WHERE "coupons"."code" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.6ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mSystemRequirement Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "system_requirements" WHERE LOWER("system_requirements"."name") = LOWER($1) LIMIT $2[0m  [["name", "Basic 1"], ["LIMIT", 1]]
+  [1m[36mSystemRequirement Create (0.4ms)[0m  [1m[32mINSERT INTO "system_requirements" ("name", "operational_system", "storage", "processor", "memory", "video_board", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "Basic 1"], ["operational_system", "Catalina (10.15)"], ["storage", "5GB"], ["processor", "AMD Ryzen 7"], ["memory", "2GB"], ["video_board", "N/A"], ["created_at", "2020-11-13 11:38:10.315105"], ["updated_at", "2020-11-13 11:38:10.315105"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mGame Create (1.0ms)[0m  [1m[32mINSERT INTO "games" ("mode", "release_date", "developer", "system_requirement_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["mode", 1], ["release_date", "2020-06-01 00:00:00"], ["developer", "Nogueira e Associados"], ["system_requirement_id", 37], ["created_at", "2020-11-13 11:38:10.317132"], ["updated_at", "2020-11-13 11:38:10.317132"]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mProduct Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM "products" WHERE LOWER("products"."name") = LOWER($1) LIMIT $2[0m  [["name", ""], ["LIMIT", 1]]
+  [1m[36mProduct Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "products" WHERE "products"."name" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mSystemRequirement Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "system_requirements" WHERE LOWER("system_requirements"."name") = LOWER($1) LIMIT $2[0m  [["name", "Basic 2"], ["LIMIT", 1]]
+  [1m[36mSystemRequirement Create (0.7ms)[0m  [1m[32mINSERT INTO "system_requirements" ("name", "operational_system", "storage", "processor", "memory", "video_board", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "Basic 2"], ["operational_system", "Debian 9.9.10"], ["storage", "5GB"], ["processor", "AMD Ryzen 7"], ["memory", "2GB"], ["video_board", "N/A"], ["created_at", "2020-11-13 11:38:10.332610"], ["updated_at", "2020-11-13 11:38:10.332610"]]
+  [1m[35m (0.3ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mGame Create (0.5ms)[0m  [1m[32mINSERT INTO "games" ("mode", "release_date", "developer", "system_requirement_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["mode", 3], ["release_date", "2020-06-01 00:00:00"], ["developer", "Tavares-Chaves"], ["system_requirement_id", 38], ["created_at", "2020-11-13 11:38:10.335720"], ["updated_at", "2020-11-13 11:38:10.335720"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" ORDER BY "products"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mProduct Create (0.4ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "price", "productable_type", "productable_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Product 2"], ["description", "Cum voluptatem tempore. Ad libero id. Assumenda repellat repellendus."], ["price", "258.22"], ["productable_type", "Game"], ["productable_id", 34], ["created_at", "2020-11-13 11:38:10.338824"], ["updated_at", "2020-11-13 11:38:10.338824"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mGame Load (0.4ms)[0m  [1m[34mSELECT "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 34], ["LIMIT", 1]]
+  [1m[36mProduct Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "products" WHERE LOWER("products"."name") = LOWER($1) LIMIT $2[0m  [["name", "Product 2"], ["LIMIT", 1]]
+  [1m[36mProduct Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "products" WHERE LOWER("products"."name") = LOWER($1) LIMIT $2[0m  [["name", "pRODUCT 2"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mSystemRequirement Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "system_requirements" WHERE LOWER("system_requirements"."name") = LOWER($1) LIMIT $2[0m  [["name", "Basic 3"], ["LIMIT", 1]]
+  [1m[36mSystemRequirement Create (1.0ms)[0m  [1m[32mINSERT INTO "system_requirements" ("name", "operational_system", "storage", "processor", "memory", "video_board", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "Basic 3"], ["operational_system", "Ubuntu Server 18.04"], ["storage", "5GB"], ["processor", "AMD Ryzen 7"], ["memory", "2GB"], ["video_board", "N/A"], ["created_at", "2020-11-13 11:38:10.351484"], ["updated_at", "2020-11-13 11:38:10.351484"]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mGame Create (0.6ms)[0m  [1m[32mINSERT INTO "games" ("mode", "release_date", "developer", "system_requirement_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["mode", 2], ["release_date", "2020-06-01 00:00:00"], ["developer", "Galego LTDA"], ["system_requirement_id", 39], ["created_at", "2020-11-13 11:38:10.354382"], ["updated_at", "2020-11-13 11:38:10.354382"]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mProduct Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "products" WHERE LOWER("products"."name") = LOWER($1) LIMIT $2[0m  [["name", "Product 3"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mSystemRequirement Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "system_requirements" WHERE LOWER("system_requirements"."name") = LOWER($1) LIMIT $2[0m  [["name", "Basic 4"], ["LIMIT", 1]]
+  [1m[36mSystemRequirement Create (0.4ms)[0m  [1m[32mINSERT INTO "system_requirements" ("name", "operational_system", "storage", "processor", "memory", "video_board", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "Basic 4"], ["operational_system", "Catalina (10.15)"], ["storage", "5GB"], ["processor", "AMD Ryzen 7"], ["memory", "2GB"], ["video_board", "N/A"], ["created_at", "2020-11-13 11:38:10.364806"], ["updated_at", "2020-11-13 11:38:10.364806"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.4ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mGame Create (0.6ms)[0m  [1m[32mINSERT INTO "games" ("mode", "release_date", "developer", "system_requirement_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["mode", 1], ["release_date", "2020-06-01 00:00:00"], ["developer", "Siqueiro e Associados"], ["system_requirement_id", 40], ["created_at", "2020-11-13 11:38:10.367235"], ["updated_at", "2020-11-13 11:38:10.367235"]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mProduct Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "products" WHERE LOWER("products"."name") = LOWER($1) LIMIT $2[0m  [["name", "Product 4"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mSystemRequirement Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "system_requirements" WHERE LOWER("system_requirements"."name") = LOWER($1) LIMIT $2[0m  [["name", "Basic 5"], ["LIMIT", 1]]
+  [1m[36mSystemRequirement Create (0.3ms)[0m  [1m[32mINSERT INTO "system_requirements" ("name", "operational_system", "storage", "processor", "memory", "video_board", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "Basic 5"], ["operational_system", "Mojave (10.14)"], ["storage", "5GB"], ["processor", "AMD Ryzen 7"], ["memory", "2GB"], ["video_board", "N/A"], ["created_at", "2020-11-13 11:38:10.378593"], ["updated_at", "2020-11-13 11:38:10.378593"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mGame Create (0.5ms)[0m  [1m[32mINSERT INTO "games" ("mode", "release_date", "developer", "system_requirement_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["mode", 2], ["release_date", "2020-06-01 00:00:00"], ["developer", "Silveira EIRELI"], ["system_requirement_id", 41], ["created_at", "2020-11-13 11:38:10.380039"], ["updated_at", "2020-11-13 11:38:10.380039"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mProduct Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM "products" WHERE LOWER("products"."name") = LOWER($1) LIMIT $2[0m  [["name", "Product 5"], ["LIMIT", 1]]
+  [1m[36mProduct Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "products" WHERE LOWER("products"."name") = LOWER($1) LIMIT $2[0m  [["name", "Product 5"], ["LIMIT", 1]]
+  [1m[36mProduct Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "products" WHERE LOWER("products"."name") = LOWER($1) LIMIT $2[0m  [["name", "Product 5"], ["LIMIT", 1]]
+  [1m[36mProduct Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "products" WHERE LOWER("products"."name") = LOWER($1) LIMIT $2[0m  [["name", "Product 5"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mSystemRequirement Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "system_requirements" WHERE LOWER("system_requirements"."name") = LOWER($1) LIMIT $2[0m  [["name", "Basic 6"], ["LIMIT", 1]]
+  [1m[36mSystemRequirement Create (0.3ms)[0m  [1m[32mINSERT INTO "system_requirements" ("name", "operational_system", "storage", "processor", "memory", "video_board", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "Basic 6"], ["operational_system", "High Sierra (10.13)"], ["storage", "5GB"], ["processor", "AMD Ryzen 7"], ["memory", "2GB"], ["video_board", "N/A"], ["created_at", "2020-11-13 11:38:10.395842"], ["updated_at", "2020-11-13 11:38:10.395842"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mGame Create (0.5ms)[0m  [1m[32mINSERT INTO "games" ("mode", "release_date", "developer", "system_requirement_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["mode", 3], ["release_date", "2020-06-01 00:00:00"], ["developer", "Bentes, Grotas e Hermingues"], ["system_requirement_id", 42], ["created_at", "2020-11-13 11:38:10.397358"], ["updated_at", "2020-11-13 11:38:10.397358"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mProduct Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "products" WHERE LOWER("products"."name") = LOWER($1) LIMIT $2[0m  [["name", "Product 6"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mSystemRequirement Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "system_requirements" WHERE LOWER("system_requirements"."name") = LOWER($1) LIMIT $2[0m  [["name", "Basic 7"], ["LIMIT", 1]]
+  [1m[36mSystemRequirement Create (0.6ms)[0m  [1m[32mINSERT INTO "system_requirements" ("name", "operational_system", "storage", "processor", "memory", "video_board", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "Basic 7"], ["operational_system", "CentOS 8"], ["storage", "5GB"], ["processor", "AMD Ryzen 7"], ["memory", "2GB"], ["video_board", "N/A"], ["created_at", "2020-11-13 11:38:10.408766"], ["updated_at", "2020-11-13 11:38:10.408766"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mGame Create (0.7ms)[0m  [1m[32mINSERT INTO "games" ("mode", "release_date", "developer", "system_requirement_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["mode", 1], ["release_date", "2020-06-01 00:00:00"], ["developer", "Almada-Parreira"], ["system_requirement_id", 43], ["created_at", "2020-11-13 11:38:10.410750"], ["updated_at", "2020-11-13 11:38:10.410750"]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mSystemRequirement Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "system_requirements" WHERE LOWER("system_requirements"."name") = LOWER($1) LIMIT $2[0m  [["name", "Basic 8"], ["LIMIT", 1]]
+  [1m[36mSystemRequirement Create (0.6ms)[0m  [1m[32mINSERT INTO "system_requirements" ("name", "operational_system", "storage", "processor", "memory", "video_board", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "Basic 8"], ["operational_system", "RHEL 6.10"], ["storage", "5GB"], ["processor", "AMD Ryzen 7"], ["memory", "2GB"], ["video_board", "N/A"], ["created_at", "2020-11-13 11:38:10.419883"], ["updated_at", "2020-11-13 11:38:10.419883"]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mGame Create (0.5ms)[0m  [1m[32mINSERT INTO "games" ("mode", "release_date", "developer", "system_requirement_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["mode", 1], ["release_date", "2020-06-01 00:00:00"], ["developer", "Carreira-Caldeira"], ["system_requirement_id", 44], ["created_at", "2020-11-13 11:38:10.422308"], ["updated_at", "2020-11-13 11:38:10.422308"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSystemRequirement Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "system_requirements" WHERE LOWER("system_requirements"."name") = LOWER($1) LIMIT $2[0m  [["name", ""], ["LIMIT", 1]]
+  [1m[36mSystemRequirement Exists? (0.9ms)[0m  [1m[34mSELECT 1 AS one FROM "system_requirements" WHERE "system_requirements"."name" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSystemRequirement Load (0.3ms)[0m  [1m[34mSELECT "system_requirements".* FROM "system_requirements" ORDER BY "system_requirements"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mSystemRequirement Create (0.4ms)[0m  [1m[32mINSERT INTO "system_requirements" ("created_at", "updated_at") VALUES ($1, $2) RETURNING "id"[0m  [["created_at", "2020-11-13 11:38:10.439767"], ["updated_at", "2020-11-13 11:38:10.439767"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mSystemRequirement Update (0.3ms)[0m  [1m[33mUPDATE "system_requirements" SET "name" = $1, "updated_at" = $2 WHERE "system_requirements"."id" = $3[0m  [["name", "dummy value"], ["updated_at", "2020-11-13 11:38:10.441763"], ["id", 45]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mSystemRequirement Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "system_requirements" WHERE LOWER("system_requirements"."name") = LOWER($1) LIMIT $2[0m  [["name", "dummy value"], ["LIMIT", 1]]
+  [1m[36mSystemRequirement Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "system_requirements" WHERE LOWER("system_requirements"."name") = LOWER($1) LIMIT $2[0m  [["name", "DUMMY VALUE"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSystemRequirement Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "system_requirements" WHERE "system_requirements"."name" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mSystemRequirement Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "system_requirements" WHERE "system_requirements"."name" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSystemRequirement Exists? (0.8ms)[0m  [1m[34mSELECT 1 AS one FROM "system_requirements" WHERE "system_requirements"."name" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mSystemRequirement Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "system_requirements" WHERE "system_requirements"."name" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSystemRequirement Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "system_requirements" WHERE "system_requirements"."name" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mSystemRequirement Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "system_requirements" WHERE "system_requirements"."name" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSystemRequirement Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "system_requirements" WHERE "system_requirements"."name" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mSystemRequirement Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "system_requirements" WHERE "system_requirements"."name" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSystemRequirement Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "system_requirements" WHERE "system_requirements"."name" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mSystemRequirement Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "system_requirements" WHERE "system_requirements"."name" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (1.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" IS NULL AND "users"."provider" = $1 LIMIT $2[0m  [["provider", "email"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" IS NULL AND "users"."provider" = $1 LIMIT $2[0m  [["provider", "email"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" IS NULL AND "users"."provider" = $1 LIMIT $2[0m  [["provider", "email"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "schema_sha1"]]
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCategory Exists? (0.9ms)[0m  [1m[34mSELECT 1 AS one FROM "categories" WHERE LOWER("categories"."name") = LOWER($1) LIMIT $2[0m  [["name", ""], ["LIMIT", 1]]
+  [1m[36mCategory Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "categories" WHERE "categories"."name" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCategory Load (0.5ms)[0m  [1m[34mSELECT "categories".* FROM "categories" ORDER BY "categories"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCategory Create (0.9ms)[0m  [1m[32mINSERT INTO "categories" ("created_at", "updated_at") VALUES ($1, $2) RETURNING "id"[0m  [["created_at", "2020-11-13 11:40:04.706407"], ["updated_at", "2020-11-13 11:40:04.706407"]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCategory Update (0.8ms)[0m  [1m[33mUPDATE "categories" SET "name" = $1, "updated_at" = $2 WHERE "categories"."id" = $3[0m  [["name", "dummy value"], ["updated_at", "2020-11-13 11:40:04.709745"], ["id", 6]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mCategory Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "categories" WHERE LOWER("categories"."name") = LOWER($1) LIMIT $2[0m  [["name", "dummy value"], ["LIMIT", 1]]
+  [1m[36mCategory Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "categories" WHERE LOWER("categories"."name") = LOWER($1) LIMIT $2[0m  [["name", "DUMMY VALUE"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCoupon Exists? (0.9ms)[0m  [1m[34mSELECT 1 AS one FROM "coupons" WHERE "coupons"."code" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mCoupon Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "coupons" WHERE "coupons"."code" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCoupon Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "coupons" WHERE LOWER("coupons"."code") = LOWER($1) LIMIT $2[0m  [["code", ""], ["LIMIT", 1]]
+  [1m[36mCoupon Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "coupons" WHERE "coupons"."code" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCoupon Load (0.2ms)[0m  [1m[34mSELECT "coupons".* FROM "coupons" ORDER BY "coupons"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCoupon Create (0.4ms)[0m  [1m[32mINSERT INTO "coupons" ("created_at", "updated_at") VALUES ($1, $2) RETURNING "id"[0m  [["created_at", "2020-11-13 11:40:04.782797"], ["updated_at", "2020-11-13 11:40:04.782797"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCoupon Update (0.3ms)[0m  [1m[33mUPDATE "coupons" SET "code" = $1, "updated_at" = $2 WHERE "coupons"."id" = $3[0m  [["code", "dummy value"], ["updated_at", "2020-11-13 11:40:04.784459"], ["id", 6]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mCoupon Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "coupons" WHERE LOWER("coupons"."code") = LOWER($1) LIMIT $2[0m  [["code", "dummy value"], ["LIMIT", 1]]
+  [1m[36mCoupon Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "coupons" WHERE LOWER("coupons"."code") = LOWER($1) LIMIT $2[0m  [["code", "DUMMY VALUE"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCoupon Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "coupons" WHERE "coupons"."code" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCoupon Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "coupons" WHERE "coupons"."code" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCoupon Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "coupons" WHERE "coupons"."code" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mCoupon Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "coupons" WHERE "coupons"."code" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mCoupon Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "coupons" WHERE "coupons"."code" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mCoupon Exists? (0.9ms)[0m  [1m[34mSELECT 1 AS one FROM "coupons" WHERE "coupons"."code" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCoupon Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "coupons" WHERE "coupons"."code" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCoupon Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "coupons" WHERE "coupons"."code" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mCoupon Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "coupons" WHERE "coupons"."code" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mCoupon Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "coupons" WHERE "coupons"."code" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mCoupon Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "coupons" WHERE "coupons"."code" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mCoupon Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "coupons" WHERE "coupons"."code" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCoupon Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "coupons" WHERE "coupons"."code" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mSystemRequirement Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM "system_requirements" WHERE LOWER("system_requirements"."name") = LOWER($1) LIMIT $2[0m  [["name", "Basic 1"], ["LIMIT", 1]]
+  [1m[36mSystemRequirement Create (0.6ms)[0m  [1m[32mINSERT INTO "system_requirements" ("name", "operational_system", "storage", "processor", "memory", "video_board", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "Basic 1"], ["operational_system", "Windows Server 2016"], ["storage", "5GB"], ["processor", "AMD Ryzen 7"], ["memory", "2GB"], ["video_board", "N/A"], ["created_at", "2020-11-13 11:40:04.977881"], ["updated_at", "2020-11-13 11:40:04.977881"]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mGame Create (0.8ms)[0m  [1m[32mINSERT INTO "games" ("mode", "release_date", "developer", "system_requirement_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["mode", 3], ["release_date", "2020-06-01 00:00:00"], ["developer", "Modesto-Nogueira"], ["system_requirement_id", 46], ["created_at", "2020-11-13 11:40:04.980660"], ["updated_at", "2020-11-13 11:40:04.980660"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mProduct Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM "products" WHERE LOWER("products"."name") = LOWER($1) LIMIT $2[0m  [["name", ""], ["LIMIT", 1]]
+  [1m[36mProduct Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "products" WHERE "products"."name" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mSystemRequirement Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "system_requirements" WHERE LOWER("system_requirements"."name") = LOWER($1) LIMIT $2[0m  [["name", "Basic 2"], ["LIMIT", 1]]
+  [1m[36mSystemRequirement Create (0.3ms)[0m  [1m[32mINSERT INTO "system_requirements" ("name", "operational_system", "storage", "processor", "memory", "video_board", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "Basic 2"], ["operational_system", "CentOS 7"], ["storage", "5GB"], ["processor", "AMD Ryzen 7"], ["memory", "2GB"], ["video_board", "N/A"], ["created_at", "2020-11-13 11:40:04.994546"], ["updated_at", "2020-11-13 11:40:04.994546"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mGame Create (0.4ms)[0m  [1m[32mINSERT INTO "games" ("mode", "release_date", "developer", "system_requirement_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["mode", 1], ["release_date", "2020-06-01 00:00:00"], ["developer", "Dias Comércio"], ["system_requirement_id", 47], ["created_at", "2020-11-13 11:40:04.995923"], ["updated_at", "2020-11-13 11:40:04.995923"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" ORDER BY "products"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mProduct Create (0.4ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "price", "productable_type", "productable_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Product 2"], ["description", "Vero non itaque. Beatae sint assumenda. Ullam velit quis."], ["price", "121.89"], ["productable_type", "Game"], ["productable_id", 42], ["created_at", "2020-11-13 11:40:04.998502"], ["updated_at", "2020-11-13 11:40:04.998502"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mGame Load (0.4ms)[0m  [1m[34mSELECT "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 42], ["LIMIT", 1]]
+  [1m[36mProduct Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM "products" WHERE LOWER("products"."name") = LOWER($1) LIMIT $2[0m  [["name", "Product 2"], ["LIMIT", 1]]
+  [1m[36mProduct Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "products" WHERE LOWER("products"."name") = LOWER($1) LIMIT $2[0m  [["name", "pRODUCT 2"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mSystemRequirement Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "system_requirements" WHERE LOWER("system_requirements"."name") = LOWER($1) LIMIT $2[0m  [["name", "Basic 3"], ["LIMIT", 1]]
+  [1m[36mSystemRequirement Create (0.3ms)[0m  [1m[32mINSERT INTO "system_requirements" ("name", "operational_system", "storage", "processor", "memory", "video_board", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "Basic 3"], ["operational_system", "CentOS 6"], ["storage", "5GB"], ["processor", "AMD Ryzen 7"], ["memory", "2GB"], ["video_board", "N/A"], ["created_at", "2020-11-13 11:40:05.012117"], ["updated_at", "2020-11-13 11:40:05.012117"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mGame Create (0.4ms)[0m  [1m[32mINSERT INTO "games" ("mode", "release_date", "developer", "system_requirement_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["mode", 3], ["release_date", "2020-06-01 00:00:00"], ["developer", "Martim EIRELI"], ["system_requirement_id", 48], ["created_at", "2020-11-13 11:40:05.013453"], ["updated_at", "2020-11-13 11:40:05.013453"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mProduct Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "products" WHERE LOWER("products"."name") = LOWER($1) LIMIT $2[0m  [["name", "Product 3"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.7ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mSystemRequirement Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "system_requirements" WHERE LOWER("system_requirements"."name") = LOWER($1) LIMIT $2[0m  [["name", "Basic 4"], ["LIMIT", 1]]
+  [1m[36mSystemRequirement Create (0.6ms)[0m  [1m[32mINSERT INTO "system_requirements" ("name", "operational_system", "storage", "processor", "memory", "video_board", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "Basic 4"], ["operational_system", "High Sierra (10.13)"], ["storage", "5GB"], ["processor", "AMD Ryzen 7"], ["memory", "2GB"], ["video_board", "N/A"], ["created_at", "2020-11-13 11:40:05.023586"], ["updated_at", "2020-11-13 11:40:05.023586"]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mGame Create (0.7ms)[0m  [1m[32mINSERT INTO "games" ("mode", "release_date", "developer", "system_requirement_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["mode", 1], ["release_date", "2020-06-01 00:00:00"], ["developer", "de Lara, Rodrigues e Corte"], ["system_requirement_id", 49], ["created_at", "2020-11-13 11:40:05.026074"], ["updated_at", "2020-11-13 11:40:05.026074"]]
+  [1m[35m (0.3ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mProduct Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "products" WHERE LOWER("products"."name") = LOWER($1) LIMIT $2[0m  [["name", "Product 4"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mSystemRequirement Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "system_requirements" WHERE LOWER("system_requirements"."name") = LOWER($1) LIMIT $2[0m  [["name", "Basic 5"], ["LIMIT", 1]]
+  [1m[36mSystemRequirement Create (0.3ms)[0m  [1m[32mINSERT INTO "system_requirements" ("name", "operational_system", "storage", "processor", "memory", "video_board", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "Basic 5"], ["operational_system", "High Sierra (10.13)"], ["storage", "5GB"], ["processor", "AMD Ryzen 7"], ["memory", "2GB"], ["video_board", "N/A"], ["created_at", "2020-11-13 11:40:05.037472"], ["updated_at", "2020-11-13 11:40:05.037472"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mGame Create (0.5ms)[0m  [1m[32mINSERT INTO "games" ("mode", "release_date", "developer", "system_requirement_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["mode", 1], ["release_date", "2020-06-01 00:00:00"], ["developer", "Peixoto, Siqueiro e Passarinho"], ["system_requirement_id", 50], ["created_at", "2020-11-13 11:40:05.039030"], ["updated_at", "2020-11-13 11:40:05.039030"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mProduct Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "products" WHERE LOWER("products"."name") = LOWER($1) LIMIT $2[0m  [["name", "Product 5"], ["LIMIT", 1]]
+  [1m[36mProduct Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "products" WHERE LOWER("products"."name") = LOWER($1) LIMIT $2[0m  [["name", "Product 5"], ["LIMIT", 1]]
+  [1m[36mProduct Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "products" WHERE LOWER("products"."name") = LOWER($1) LIMIT $2[0m  [["name", "Product 5"], ["LIMIT", 1]]
+  [1m[36mProduct Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "products" WHERE LOWER("products"."name") = LOWER($1) LIMIT $2[0m  [["name", "Product 5"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mSystemRequirement Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "system_requirements" WHERE LOWER("system_requirements"."name") = LOWER($1) LIMIT $2[0m  [["name", "Basic 6"], ["LIMIT", 1]]
+  [1m[36mSystemRequirement Create (0.6ms)[0m  [1m[32mINSERT INTO "system_requirements" ("name", "operational_system", "storage", "processor", "memory", "video_board", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "Basic 6"], ["operational_system", "Catalina (10.15)"], ["storage", "5GB"], ["processor", "AMD Ryzen 7"], ["memory", "2GB"], ["video_board", "N/A"], ["created_at", "2020-11-13 11:40:05.055990"], ["updated_at", "2020-11-13 11:40:05.055990"]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mGame Create (0.5ms)[0m  [1m[32mINSERT INTO "games" ("mode", "release_date", "developer", "system_requirement_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["mode", 1], ["release_date", "2020-06-01 00:00:00"], ["developer", "Melo, da Conceição e Geraldes"], ["system_requirement_id", 51], ["created_at", "2020-11-13 11:40:05.059579"], ["updated_at", "2020-11-13 11:40:05.059579"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mProduct Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "products" WHERE LOWER("products"."name") = LOWER($1) LIMIT $2[0m  [["name", "Product 6"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mSystemRequirement Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "system_requirements" WHERE LOWER("system_requirements"."name") = LOWER($1) LIMIT $2[0m  [["name", "Basic 7"], ["LIMIT", 1]]
+  [1m[36mSystemRequirement Create (0.3ms)[0m  [1m[32mINSERT INTO "system_requirements" ("name", "operational_system", "storage", "processor", "memory", "video_board", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "Basic 7"], ["operational_system", "Windows 10"], ["storage", "5GB"], ["processor", "AMD Ryzen 7"], ["memory", "2GB"], ["video_board", "N/A"], ["created_at", "2020-11-13 11:40:05.066819"], ["updated_at", "2020-11-13 11:40:05.066819"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mGame Create (0.4ms)[0m  [1m[32mINSERT INTO "games" ("mode", "release_date", "developer", "system_requirement_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["mode", 2], ["release_date", "2020-06-01 00:00:00"], ["developer", "Rocha Comércio"], ["system_requirement_id", 52], ["created_at", "2020-11-13 11:40:05.068224"], ["updated_at", "2020-11-13 11:40:05.068224"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mSystemRequirement Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "system_requirements" WHERE LOWER("system_requirements"."name") = LOWER($1) LIMIT $2[0m  [["name", "Basic 8"], ["LIMIT", 1]]
+  [1m[36mSystemRequirement Create (0.4ms)[0m  [1m[32mINSERT INTO "system_requirements" ("name", "operational_system", "storage", "processor", "memory", "video_board", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "Basic 8"], ["operational_system", "CentOS 7"], ["storage", "5GB"], ["processor", "AMD Ryzen 7"], ["memory", "2GB"], ["video_board", "N/A"], ["created_at", "2020-11-13 11:40:05.075747"], ["updated_at", "2020-11-13 11:40:05.075747"]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mGame Create (0.4ms)[0m  [1m[32mINSERT INTO "games" ("mode", "release_date", "developer", "system_requirement_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["mode", 2], ["release_date", "2020-06-01 00:00:00"], ["developer", "Fernandes Comércio"], ["system_requirement_id", 53], ["created_at", "2020-11-13 11:40:05.077521"], ["updated_at", "2020-11-13 11:40:05.077521"]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSystemRequirement Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "system_requirements" WHERE LOWER("system_requirements"."name") = LOWER($1) LIMIT $2[0m  [["name", ""], ["LIMIT", 1]]
+  [1m[36mSystemRequirement Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "system_requirements" WHERE "system_requirements"."name" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSystemRequirement Load (0.3ms)[0m  [1m[34mSELECT "system_requirements".* FROM "system_requirements" ORDER BY "system_requirements"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mSystemRequirement Create (0.5ms)[0m  [1m[32mINSERT INTO "system_requirements" ("created_at", "updated_at") VALUES ($1, $2) RETURNING "id"[0m  [["created_at", "2020-11-13 11:40:05.096853"], ["updated_at", "2020-11-13 11:40:05.096853"]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mSystemRequirement Update (0.4ms)[0m  [1m[33mUPDATE "system_requirements" SET "name" = $1, "updated_at" = $2 WHERE "system_requirements"."id" = $3[0m  [["name", "dummy value"], ["updated_at", "2020-11-13 11:40:05.099078"], ["id", 54]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mSystemRequirement Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "system_requirements" WHERE LOWER("system_requirements"."name") = LOWER($1) LIMIT $2[0m  [["name", "dummy value"], ["LIMIT", 1]]
+  [1m[36mSystemRequirement Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "system_requirements" WHERE LOWER("system_requirements"."name") = LOWER($1) LIMIT $2[0m  [["name", "DUMMY VALUE"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSystemRequirement Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "system_requirements" WHERE "system_requirements"."name" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mSystemRequirement Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "system_requirements" WHERE "system_requirements"."name" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSystemRequirement Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "system_requirements" WHERE "system_requirements"."name" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mSystemRequirement Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "system_requirements" WHERE "system_requirements"."name" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSystemRequirement Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "system_requirements" WHERE "system_requirements"."name" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mSystemRequirement Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "system_requirements" WHERE "system_requirements"."name" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSystemRequirement Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "system_requirements" WHERE "system_requirements"."name" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mSystemRequirement Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM "system_requirements" WHERE "system_requirements"."name" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSystemRequirement Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "system_requirements" WHERE "system_requirements"."name" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mSystemRequirement Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "system_requirements" WHERE "system_requirements"."name" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (1.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" IS NULL AND "users"."provider" = $1 LIMIT $2[0m  [["provider", "email"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" IS NULL AND "users"."provider" = $1 LIMIT $2[0m  [["provider", "email"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" IS NULL AND "users"."provider" = $1 LIMIT $2[0m  [["provider", "email"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "schema_sha1"]]
+  [1m[35m (2.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "schema_sha1"]]
+  [1m[35m (2.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCategory Exists? (1.2ms)[0m  [1m[34mSELECT 1 AS one FROM "categories" WHERE LOWER("categories"."name") = LOWER($1) LIMIT $2[0m  [["name", ""], ["LIMIT", 1]]
+  [1m[36mCategory Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "categories" WHERE "categories"."name" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCategory Load (0.6ms)[0m  [1m[34mSELECT "categories".* FROM "categories" ORDER BY "categories"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCategory Create (1.9ms)[0m  [1m[32mINSERT INTO "categories" ("created_at", "updated_at") VALUES ($1, $2) RETURNING "id"[0m  [["created_at", "2020-11-13 11:43:29.406072"], ["updated_at", "2020-11-13 11:43:29.406072"]]
+  [1m[35m (0.3ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCategory Update (0.9ms)[0m  [1m[33mUPDATE "categories" SET "name" = $1, "updated_at" = $2 WHERE "categories"."id" = $3[0m  [["name", "dummy value"], ["updated_at", "2020-11-13 11:43:29.410643"], ["id", 7]]
+  [1m[35m (0.3ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mCategory Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "categories" WHERE LOWER("categories"."name") = LOWER($1) LIMIT $2[0m  [["name", "dummy value"], ["LIMIT", 1]]
+  [1m[36mCategory Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "categories" WHERE LOWER("categories"."name") = LOWER($1) LIMIT $2[0m  [["name", "DUMMY VALUE"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.8ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCoupon Exists? (1.0ms)[0m  [1m[34mSELECT 1 AS one FROM "coupons" WHERE "coupons"."code" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mCoupon Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "coupons" WHERE "coupons"."code" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.6ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCoupon Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "coupons" WHERE LOWER("coupons"."code") = LOWER($1) LIMIT $2[0m  [["code", ""], ["LIMIT", 1]]
+  [1m[36mCoupon Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "coupons" WHERE "coupons"."code" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCoupon Load (0.6ms)[0m  [1m[34mSELECT "coupons".* FROM "coupons" ORDER BY "coupons"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCoupon Create (0.7ms)[0m  [1m[32mINSERT INTO "coupons" ("created_at", "updated_at") VALUES ($1, $2) RETURNING "id"[0m  [["created_at", "2020-11-13 11:43:29.486245"], ["updated_at", "2020-11-13 11:43:29.486245"]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCoupon Update (0.7ms)[0m  [1m[33mUPDATE "coupons" SET "code" = $1, "updated_at" = $2 WHERE "coupons"."id" = $3[0m  [["code", "dummy value"], ["updated_at", "2020-11-13 11:43:29.488858"], ["id", 7]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mCoupon Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "coupons" WHERE LOWER("coupons"."code") = LOWER($1) LIMIT $2[0m  [["code", "dummy value"], ["LIMIT", 1]]
+  [1m[36mCoupon Exists? (1.2ms)[0m  [1m[34mSELECT 1 AS one FROM "coupons" WHERE LOWER("coupons"."code") = LOWER($1) LIMIT $2[0m  [["code", "DUMMY VALUE"], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCoupon Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM "coupons" WHERE "coupons"."code" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.7ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCoupon Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "coupons" WHERE "coupons"."code" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (1.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCoupon Exists? (0.9ms)[0m  [1m[34mSELECT 1 AS one FROM "coupons" WHERE "coupons"."code" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mCoupon Exists? (1.1ms)[0m  [1m[34mSELECT 1 AS one FROM "coupons" WHERE "coupons"."code" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mCoupon Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM "coupons" WHERE "coupons"."code" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mCoupon Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "coupons" WHERE "coupons"."code" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.9ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCoupon Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM "coupons" WHERE "coupons"."code" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCoupon Exists? (0.8ms)[0m  [1m[34mSELECT 1 AS one FROM "coupons" WHERE "coupons"."code" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mCoupon Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "coupons" WHERE "coupons"."code" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mCoupon Exists? (1.1ms)[0m  [1m[34mSELECT 1 AS one FROM "coupons" WHERE "coupons"."code" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mCoupon Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "coupons" WHERE "coupons"."code" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mCoupon Exists? (1.2ms)[0m  [1m[34mSELECT 1 AS one FROM "coupons" WHERE "coupons"."code" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCoupon Exists? (0.9ms)[0m  [1m[34mSELECT 1 AS one FROM "coupons" WHERE "coupons"."code" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mSystemRequirement Exists? (1.0ms)[0m  [1m[34mSELECT 1 AS one FROM "system_requirements" WHERE LOWER("system_requirements"."name") = LOWER($1) LIMIT $2[0m  [["name", "Basic 1"], ["LIMIT", 1]]
+  [1m[36mSystemRequirement Create (1.0ms)[0m  [1m[32mINSERT INTO "system_requirements" ("name", "operational_system", "storage", "processor", "memory", "video_board", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "Basic 1"], ["operational_system", "openSUSE Leap 15.1"], ["storage", "5GB"], ["processor", "AMD Ryzen 7"], ["memory", "2GB"], ["video_board", "N/A"], ["created_at", "2020-11-13 11:43:29.770944"], ["updated_at", "2020-11-13 11:43:29.770944"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mGame Create (1.6ms)[0m  [1m[32mINSERT INTO "games" ("mode", "release_date", "developer", "system_requirement_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["mode", 3], ["release_date", "2020-06-01 00:00:00"], ["developer", "Godinho, Resende e Vidal"], ["system_requirement_id", 55], ["created_at", "2020-11-13 11:43:29.774012"], ["updated_at", "2020-11-13 11:43:29.774012"]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mProduct Exists? (1.2ms)[0m  [1m[34mSELECT 1 AS one FROM "products" WHERE LOWER("products"."name") = LOWER($1) LIMIT $2[0m  [["name", ""], ["LIMIT", 1]]
+  [1m[36mProduct Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "products" WHERE "products"."name" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mSystemRequirement Exists? (1.3ms)[0m  [1m[34mSELECT 1 AS one FROM "system_requirements" WHERE LOWER("system_requirements"."name") = LOWER($1) LIMIT $2[0m  [["name", "Basic 2"], ["LIMIT", 1]]
+  [1m[36mSystemRequirement Create (0.8ms)[0m  [1m[32mINSERT INTO "system_requirements" ("name", "operational_system", "storage", "processor", "memory", "video_board", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "Basic 2"], ["operational_system", "Mojave (10.14)"], ["storage", "5GB"], ["processor", "AMD Ryzen 7"], ["memory", "2GB"], ["video_board", "N/A"], ["created_at", "2020-11-13 11:43:29.796492"], ["updated_at", "2020-11-13 11:43:29.796492"]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mGame Create (0.8ms)[0m  [1m[32mINSERT INTO "games" ("mode", "release_date", "developer", "system_requirement_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["mode", 2], ["release_date", "2020-06-01 00:00:00"], ["developer", "Neves-Monteira"], ["system_requirement_id", 56], ["created_at", "2020-11-13 11:43:29.799429"], ["updated_at", "2020-11-13 11:43:29.799429"]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT "products".* FROM "products" ORDER BY "products"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mProduct Create (1.0ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "price", "productable_type", "productable_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Product 2"], ["description", "Architecto odit voluptatem. Tempore ullam maiores. Sint est officiis."], ["price", "386.8"], ["productable_type", "Game"], ["productable_id", 50], ["created_at", "2020-11-13 11:43:29.803584"], ["updated_at", "2020-11-13 11:43:29.803584"]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mGame Load (0.7ms)[0m  [1m[34mSELECT "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 50], ["LIMIT", 1]]
+  [1m[36mProduct Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "products" WHERE LOWER("products"."name") = LOWER($1) LIMIT $2[0m  [["name", "Product 2"], ["LIMIT", 1]]
+  [1m[36mProduct Exists? (0.8ms)[0m  [1m[34mSELECT 1 AS one FROM "products" WHERE LOWER("products"."name") = LOWER($1) LIMIT $2[0m  [["name", "pRODUCT 2"], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mSystemRequirement Exists? (1.2ms)[0m  [1m[34mSELECT 1 AS one FROM "system_requirements" WHERE LOWER("system_requirements"."name") = LOWER($1) LIMIT $2[0m  [["name", "Basic 3"], ["LIMIT", 1]]
+  [1m[36mSystemRequirement Create (0.5ms)[0m  [1m[32mINSERT INTO "system_requirements" ("name", "operational_system", "storage", "processor", "memory", "video_board", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "Basic 3"], ["operational_system", "Ubuntu Desktop 18.04"], ["storage", "5GB"], ["processor", "AMD Ryzen 7"], ["memory", "2GB"], ["video_board", "N/A"], ["created_at", "2020-11-13 11:43:29.824211"], ["updated_at", "2020-11-13 11:43:29.824211"]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mGame Create (0.9ms)[0m  [1m[32mINSERT INTO "games" ("mode", "release_date", "developer", "system_requirement_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["mode", 1], ["release_date", "2020-06-01 00:00:00"], ["developer", "Antunes EIRELI"], ["system_requirement_id", 57], ["created_at", "2020-11-13 11:43:29.826783"], ["updated_at", "2020-11-13 11:43:29.826783"]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mProduct Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM "products" WHERE LOWER("products"."name") = LOWER($1) LIMIT $2[0m  [["name", "Product 3"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.5ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mSystemRequirement Exists? (1.3ms)[0m  [1m[34mSELECT 1 AS one FROM "system_requirements" WHERE LOWER("system_requirements"."name") = LOWER($1) LIMIT $2[0m  [["name", "Basic 4"], ["LIMIT", 1]]
+  [1m[36mSystemRequirement Create (1.0ms)[0m  [1m[32mINSERT INTO "system_requirements" ("name", "operational_system", "storage", "processor", "memory", "video_board", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "Basic 4"], ["operational_system", "Catalina (10.15)"], ["storage", "5GB"], ["processor", "AMD Ryzen 7"], ["memory", "2GB"], ["video_board", "N/A"], ["created_at", "2020-11-13 11:43:29.842228"], ["updated_at", "2020-11-13 11:43:29.842228"]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mGame Create (1.2ms)[0m  [1m[32mINSERT INTO "games" ("mode", "release_date", "developer", "system_requirement_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["mode", 1], ["release_date", "2020-06-01 00:00:00"], ["developer", "Pires-Morais"], ["system_requirement_id", 58], ["created_at", "2020-11-13 11:43:29.845057"], ["updated_at", "2020-11-13 11:43:29.845057"]]
+  [1m[35m (0.3ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mProduct Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM "products" WHERE LOWER("products"."name") = LOWER($1) LIMIT $2[0m  [["name", "Product 4"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mSystemRequirement Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "system_requirements" WHERE LOWER("system_requirements"."name") = LOWER($1) LIMIT $2[0m  [["name", "Basic 5"], ["LIMIT", 1]]
+  [1m[36mSystemRequirement Create (0.5ms)[0m  [1m[32mINSERT INTO "system_requirements" ("name", "operational_system", "storage", "processor", "memory", "video_board", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "Basic 5"], ["operational_system", "ArchLinux 2020.02.01"], ["storage", "5GB"], ["processor", "AMD Ryzen 7"], ["memory", "2GB"], ["video_board", "N/A"], ["created_at", "2020-11-13 11:43:29.859716"], ["updated_at", "2020-11-13 11:43:29.859716"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mGame Create (0.9ms)[0m  [1m[32mINSERT INTO "games" ("mode", "release_date", "developer", "system_requirement_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["mode", 1], ["release_date", "2020-06-01 00:00:00"], ["developer", "Muniz-Lima"], ["system_requirement_id", 59], ["created_at", "2020-11-13 11:43:29.861667"], ["updated_at", "2020-11-13 11:43:29.861667"]]
+  [1m[35m (0.4ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mProduct Exists? (1.1ms)[0m  [1m[34mSELECT 1 AS one FROM "products" WHERE LOWER("products"."name") = LOWER($1) LIMIT $2[0m  [["name", "Product 5"], ["LIMIT", 1]]
+  [1m[36mProduct Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "products" WHERE LOWER("products"."name") = LOWER($1) LIMIT $2[0m  [["name", "Product 5"], ["LIMIT", 1]]
+  [1m[36mProduct Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "products" WHERE LOWER("products"."name") = LOWER($1) LIMIT $2[0m  [["name", "Product 5"], ["LIMIT", 1]]
+  [1m[36mProduct Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "products" WHERE LOWER("products"."name") = LOWER($1) LIMIT $2[0m  [["name", "Product 5"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mSystemRequirement Exists? (0.8ms)[0m  [1m[34mSELECT 1 AS one FROM "system_requirements" WHERE LOWER("system_requirements"."name") = LOWER($1) LIMIT $2[0m  [["name", "Basic 6"], ["LIMIT", 1]]
+  [1m[36mSystemRequirement Create (1.1ms)[0m  [1m[32mINSERT INTO "system_requirements" ("name", "operational_system", "storage", "processor", "memory", "video_board", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "Basic 6"], ["operational_system", "ArchLinux 2020.02.01"], ["storage", "5GB"], ["processor", "AMD Ryzen 7"], ["memory", "2GB"], ["video_board", "N/A"], ["created_at", "2020-11-13 11:43:29.881156"], ["updated_at", "2020-11-13 11:43:29.881156"]]
+  [1m[35m (0.5ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mGame Create (1.6ms)[0m  [1m[32mINSERT INTO "games" ("mode", "release_date", "developer", "system_requirement_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["mode", 1], ["release_date", "2020-06-01 00:00:00"], ["developer", "Conceição, Sanches e Godins"], ["system_requirement_id", 60], ["created_at", "2020-11-13 11:43:29.885128"], ["updated_at", "2020-11-13 11:43:29.885128"]]
+  [1m[35m (0.3ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mProduct Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "products" WHERE LOWER("products"."name") = LOWER($1) LIMIT $2[0m  [["name", "Product 6"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mSystemRequirement Exists? (1.1ms)[0m  [1m[34mSELECT 1 AS one FROM "system_requirements" WHERE LOWER("system_requirements"."name") = LOWER($1) LIMIT $2[0m  [["name", "Basic 7"], ["LIMIT", 1]]
+  [1m[36mSystemRequirement Create (1.1ms)[0m  [1m[32mINSERT INTO "system_requirements" ("name", "operational_system", "storage", "processor", "memory", "video_board", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "Basic 7"], ["operational_system", "Windows 8.1"], ["storage", "5GB"], ["processor", "AMD Ryzen 7"], ["memory", "2GB"], ["video_board", "N/A"], ["created_at", "2020-11-13 11:43:29.898950"], ["updated_at", "2020-11-13 11:43:29.898950"]]
+  [1m[35m (0.3ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mGame Create (1.4ms)[0m  [1m[32mINSERT INTO "games" ("mode", "release_date", "developer", "system_requirement_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["mode", 3], ["release_date", "2020-06-01 00:00:00"], ["developer", "Arantes, Regueira e Jesus"], ["system_requirement_id", 61], ["created_at", "2020-11-13 11:43:29.903024"], ["updated_at", "2020-11-13 11:43:29.903024"]]
+  [1m[35m (0.3ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mSystemRequirement Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM "system_requirements" WHERE LOWER("system_requirements"."name") = LOWER($1) LIMIT $2[0m  [["name", "Basic 8"], ["LIMIT", 1]]
+  [1m[36mSystemRequirement Create (1.5ms)[0m  [1m[32mINSERT INTO "system_requirements" ("name", "operational_system", "storage", "processor", "memory", "video_board", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "Basic 8"], ["operational_system", "Windows Server 2019"], ["storage", "5GB"], ["processor", "AMD Ryzen 7"], ["memory", "2GB"], ["video_board", "N/A"], ["created_at", "2020-11-13 11:43:29.913070"], ["updated_at", "2020-11-13 11:43:29.913070"]]
+  [1m[35m (0.5ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mGame Create (0.9ms)[0m  [1m[32mINSERT INTO "games" ("mode", "release_date", "developer", "system_requirement_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["mode", 3], ["release_date", "2020-06-01 00:00:00"], ["developer", "da Barra-Louzada"], ["system_requirement_id", 62], ["created_at", "2020-11-13 11:43:29.917919"], ["updated_at", "2020-11-13 11:43:29.917919"]]
+  [1m[35m (1.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSystemRequirement Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "system_requirements" WHERE LOWER("system_requirements"."name") = LOWER($1) LIMIT $2[0m  [["name", ""], ["LIMIT", 1]]
+  [1m[36mSystemRequirement Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM "system_requirements" WHERE "system_requirements"."name" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSystemRequirement Load (0.4ms)[0m  [1m[34mSELECT "system_requirements".* FROM "system_requirements" ORDER BY "system_requirements"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mSystemRequirement Create (0.6ms)[0m  [1m[32mINSERT INTO "system_requirements" ("created_at", "updated_at") VALUES ($1, $2) RETURNING "id"[0m  [["created_at", "2020-11-13 11:43:29.943968"], ["updated_at", "2020-11-13 11:43:29.943968"]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mSystemRequirement Update (1.1ms)[0m  [1m[33mUPDATE "system_requirements" SET "name" = $1, "updated_at" = $2 WHERE "system_requirements"."id" = $3[0m  [["name", "dummy value"], ["updated_at", "2020-11-13 11:43:29.946396"], ["id", 63]]
+  [1m[35m (0.4ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mSystemRequirement Exists? (1.2ms)[0m  [1m[34mSELECT 1 AS one FROM "system_requirements" WHERE LOWER("system_requirements"."name") = LOWER($1) LIMIT $2[0m  [["name", "dummy value"], ["LIMIT", 1]]
+  [1m[36mSystemRequirement Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM "system_requirements" WHERE LOWER("system_requirements"."name") = LOWER($1) LIMIT $2[0m  [["name", "DUMMY VALUE"], ["LIMIT", 1]]
+  [1m[35m (0.6ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSystemRequirement Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM "system_requirements" WHERE "system_requirements"."name" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mSystemRequirement Exists? (2.9ms)[0m  [1m[34mSELECT 1 AS one FROM "system_requirements" WHERE "system_requirements"."name" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSystemRequirement Exists? (3.0ms)[0m  [1m[34mSELECT 1 AS one FROM "system_requirements" WHERE "system_requirements"."name" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mSystemRequirement Exists? (1.0ms)[0m  [1m[34mSELECT 1 AS one FROM "system_requirements" WHERE "system_requirements"."name" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSystemRequirement Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM "system_requirements" WHERE "system_requirements"."name" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mSystemRequirement Exists? (1.4ms)[0m  [1m[34mSELECT 1 AS one FROM "system_requirements" WHERE "system_requirements"."name" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSystemRequirement Exists? (0.9ms)[0m  [1m[34mSELECT 1 AS one FROM "system_requirements" WHERE "system_requirements"."name" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mSystemRequirement Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "system_requirements" WHERE "system_requirements"."name" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSystemRequirement Exists? (0.8ms)[0m  [1m[34mSELECT 1 AS one FROM "system_requirements" WHERE "system_requirements"."name" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mSystemRequirement Exists? (2.2ms)[0m  [1m[34mSELECT 1 AS one FROM "system_requirements" WHERE "system_requirements"."name" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.8ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (1.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" IS NULL AND "users"."provider" = $1 LIMIT $2[0m  [["provider", "email"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" IS NULL AND "users"."provider" = $1 LIMIT $2[0m  [["provider", "email"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" IS NULL AND "users"."provider" = $1 LIMIT $2[0m  [["provider", "email"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
