@@ -3,6 +3,9 @@ FactoryBot.define do
     sequence(:name) { |n| "Product #{n}" }
     description { Faker::Lorem.paragraph }
     price { Faker::Commerce.price(range: 100.0..400.0) }
+    # Rack::Test::UploadedFile onde podemos instanciar um objeto passando como parâmetros o caminho 
+    # do arquivo que queremos anexar neste campo
+    image { Rack::Test::UploadedFile.new(Rails.root.join("spec/support/images/product_image.png")) }
 
     # O Factory Bot tem um recurso que nos permite alterar um model que está sendo
     # construído antes dele ser criado no banco. Então vamos utililizar isso na factory de Product
