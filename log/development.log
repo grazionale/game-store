@@ -604,3 +604,13 @@ FOREIGN KEY ("blob_id")
   [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
 DEPRECATION WARNING: Using `bin/rake routes` is deprecated and will be removed in Rails 6.1. Use `bin/rails routes` instead.
  (called from block in execute at /Users/gabriel.grazionale/.rvm/rubies/ruby-2.7.1/lib/ruby/gems/2.7.0/gems/rake-13.0.1/lib/rake/task.rb:281)
+Started GET "/admin/v1/categories" for ::1 at 2020-11-13 09:51:14 -0300
+  [1m[35m (9.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Admin::V1::CategoriesController#index as */*
+  Rendering admin/v1/categories/index.json.jbuilder
+  [1m[36mCategory Load (18.7ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/admin/v1/categories/index.json.jbuilder:2
+  Rendered admin/v1/categories/index.json.jbuilder (Duration: 25.9ms | Allocations: 1207)
+Completed 200 OK in 42ms (Views: 8.2ms | ActiveRecord: 21.9ms | Allocations: 4839)
+
+
