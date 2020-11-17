@@ -129,5 +129,50 @@ RSpec.describe 'Admin::V1::Categories', type: :request do
       end      
     end  
   end
-  
+
+  context "DELETE /categories/:id" do
+    let!(:category) { create(:category) }
+    let(:url) { "/admin/v1/categories/#{category.id}" }
+
+    it 'removes Category' do
+      expect do  
+        delete url, headers: auth_header(user)
+      end.to change(Category, :count).by(-1) # Espera-se que a quantidade de category tenha reduzio em 1
+    end  
+    
+    it 'returns success status' do
+      delete url, headers: auth_header(user)
+      expect(response).to have_http_status(:no_content) # verificando se retornou o status 204 (:no_content)
+    end  
+    
+    it 'does not return any body content' do
+      delete url, headers: auth_header(user)
+      expect(body_json).to_not be_present # verificaremos se a resposta realmente está sem conteúdo no body
+    end
+
+    it 'removes all associated product categories' do
+      # criar uma lista de ProductCategory com o método create_list do Factory Bot 
+      # atribuindo como categoria a que criamos lá no começo do teste de DELETE
+      product_categories = create_list(:product_category, 3, category: category) 
+      delete url, headers: auth_header(user)
+
+      # carregamos os ProductCategory que tenham o mesmo id dos que criamos e verificamos se a contagem deles é 0
+      # Verificamos se a contagem é zero porque dessa forma, significa que nenhum dos que criamos existem mais
+      expected_product_categories = ProductCategory.where(id: product_categories.map(&:id))
+      expect(expected_product_categories.count).to eq 0
+    end
+
+    it 'does not remove unassociated product categories' do
+      # criamos o ProductCategory com create_list que não tenham category associado e chamamos a rota
+      product_categories = create_list(:product_category, 3)
+      delete url, headers: auth_header(user)
+
+      # extraimos os ids dos ProductCategory que criamos, 
+      present_product_categories_ids = product_categories.map(&:id)
+      
+      # carregamos do model e verificamos se eles continuam presentes.
+      expected_product_categories = ProductCategory.where(id: present_product_categories_ids)
+      expect(expected_product_categories.ids).to contain_exactly(*present_product_categories_ids)
+    end
+  end  
 end
