@@ -21,4 +21,7 @@ RSpec.describe Category, type: :model do
   # associação has_many direto com Product através da associação com ProductCategory
   it { is_expected.to have_many(:product_categories).dependent(:destroy) }
   it { is_expected.to have_many(:products).through(:product_categories) }
+
+  # Estamos então chamando o concern 'name searchable concern' e passando como parâmetro o nome da factory
+  it_behaves_like "name searchable concern", :category
 end
