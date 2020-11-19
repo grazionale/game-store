@@ -14,7 +14,7 @@ RSpec.describe "Admin V1 Categories as :client", type: :request do
   context "POST /categories" do
     let(:url) { "/admin/v1/categories" }
 
-    before(:each) { get url, headers: auth_header(user) }
+    before(:each) { post url, headers: auth_header(user) }
     include_examples "forbidden access"
   end
 
@@ -22,7 +22,7 @@ RSpec.describe "Admin V1 Categories as :client", type: :request do
     let(:category) { create(:category) }
     let(:url) { "/admin/v1/categories/#{category.id}" }
 
-    before(:each) { get url, headers: auth_header(user) }
+    before(:each) { patch url, headers: auth_header(user) }
     include_examples "forbidden access"
   end
 
@@ -30,7 +30,7 @@ RSpec.describe "Admin V1 Categories as :client", type: :request do
     let!(:category) { create(:category) }
     let(:url) { "/admin/v1/categories/#{category.id}" } 
 
-    before(:each) { get url, headers: auth_header(user) }
+    before(:each) { delete url, headers: auth_header(user) }
     include_examples "forbidden access"
   end
 
