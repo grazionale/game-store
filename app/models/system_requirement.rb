@@ -1,4 +1,7 @@
 class SystemRequirement < ApplicationRecord
+  include NameSearchable
+  include Paginatable
+  
   # :restrict_with_error 
   # Isso quer dizer que toda vez um SystemRequirement for excluído, ele será 
   # impedido caso haja algum Game associado
