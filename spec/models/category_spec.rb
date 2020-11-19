@@ -24,4 +24,5 @@ RSpec.describe Category, type: :model do
 
   # Estamos então chamando o concern 'name searchable concern' e passando como parâmetro o nome da factory
   it_behaves_like "name searchable concern", :category
+  it_behaves_like "paginatable concern", :category
 end
