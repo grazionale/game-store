@@ -15,7 +15,9 @@ FactoryBot.define do
     # productable é um recurso da associação polimórfica que tem objeto que está associado com o model
     # utilizando os campos productable_type e productable_id
     after :build do |product|
-      product.productable = create(:game)
+      product.productable ||= create(:game)
     end
   end
 end
+
+# rails dev:prime
