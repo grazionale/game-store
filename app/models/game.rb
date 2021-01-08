@@ -1,4 +1,6 @@
 class Game < ApplicationRecord
+  include Paginatable
+
   # :system_requirement Pertence a system_requirement, ou seja, possuí id_system_requiremnent
   belongs_to :system_requirement
   has_one :product, as: :productable
