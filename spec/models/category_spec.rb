@@ -23,6 +23,6 @@ RSpec.describe Category, type: :model do
   it { is_expected.to have_many(:products).through(:product_categories) }
 
   # Estamos então chamando o concern 'name searchable concern' e passando como parâmetro o nome da factory
-  it_behaves_like "name searchable concern", :category
+  it_behaves_like "like searchable concern", :category, :name
   it_behaves_like "paginatable concern", :category
 end

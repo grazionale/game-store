@@ -1,5 +1,5 @@
 class SystemRequirement < ApplicationRecord
-  include NameSearchable
+  include LikeSearchable
   include Paginatable
   
   # :restrict_with_error 
