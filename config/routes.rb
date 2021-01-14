@@ -9,6 +9,13 @@ Rails.application.routes.draw do
       resources :coupons
       resources :system_requirements
       resources :products
+      
+      # shallow faz que adicione o game_id apenas nas rotas necessárias
+      # GET POST /admin/v1/games/:game_id/licenses
+      # GET PATCH DELETE /admin/v1/licenses/:id
+      resources :games, only: [], shallow: true do 
+        resources :licenses 
+      end
     end
   end
 
