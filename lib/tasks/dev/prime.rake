@@ -15,6 +15,11 @@ if Rails.env.development? || Rails.env.test?
         create(:user, profile: profile)
       end
 
+      1.times do
+        profile = :admin
+        create(:user, profile: profile, email: 'admin@admin.com', password: '123456')
+      end
+
       system_requirements = []
       ['Basic', 'Intermediate', 'Advanced'].each do |sr_name|
         system_requirements << create(:system_requirement, name: sr_name)
@@ -39,7 +44,14 @@ if Rails.env.development? || Rails.env.test?
         game = create(:game, system_requirement: system_requirements.sample)
         create(:product, name: game_name, status: availability, 
                          category_ids: game_categories_ids, productable: game)
-      end    
+      end 
+
+      50.times do 
+        game = Game.all[0...5].sample
+        status = [:available, :in_use, :inactive].sample
+        platform = [:steam, :battle_net, :origin].sample
+        create(:license, game: game, status: status, platform: platform)
+      end   
     end
   end
 end
