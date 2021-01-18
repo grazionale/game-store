@@ -1,5 +1,5 @@
 # a ideia desta service, é receber um model(que tenha o concern NameSearchable e Paginatable) e alguns parametros, 
-# onde será possível executar a busca ordenada, paginação e filtro pelo atributo :name dos registros
+# onde será possível executar a busca ordenada, paginação e filtro pelo atributo solicitado
 module Admin  
   class ModelLoadingService
     attr_reader :records, :pagination
