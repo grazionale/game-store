@@ -1,5 +1,3 @@
-# a ideia desta service, é receber um model(que tenha o concern NameSearchable e Paginatable) e alguns parametros, 
-# onde será possível executar a busca ordenada, paginação e filtro pelo atributo solicitado
 module Admin  
   class ModelLoadingService
     attr_reader :records, :pagination
@@ -8,25 +6,30 @@ module Admin
       @searchable_model = searchable_model
       @params = params || {}
       @records = []
-      @pagination = { page: @params[:page].to_i, length: @params[:length].to_i }
+      @pagination = {}
     end
 
     def call
-      fix_pagination_values
+      set_pagination_values
       filtered = search_records(@searchable_model)
-      @records = filtered.order(@params[:order].to_h).paginate(@pagination[:page], 
-        @pagination[:length])
-      
-      total_pages = (filtered.count / @pagination[:length].to_f).ceil # ceil arredonda para cima
+      @records = filtered.order(@params[:order].to_h).paginate(@params[:page], @params[:length])
 
-      @pagination.merge!(total: filtered.count, total_pages: total_pages)
+      set_pagination_attributes(filtered.count)
     end 
     
-    private 
-    
-    def fix_pagination_values
-      @pagination[:page] = @searchable_model.model::DEFAULT_PAGE if @pagination[:page] <= 0
-      @pagination[:length] = @searchable_model.model::MAX_PER_PAGE if @pagination[:length] <= 0
+    private
+
+    def set_pagination_values
+      @params[:page] = @params[:page].to_i
+      @params[:length] = @params[:length].to_i
+      @params[:page] = @searchable_model.model::DEFAULT_PAGE if @params[:page] <= 0
+      @params[:length] = @searchable_model.model::MAX_PER_PAGE if @params[:length] <= 0
+    end
+
+    def set_pagination_attributes(total_filtered)
+      total_pages = (total_filtered / @params[:length].to_f).ceil
+      @pagination.merge!(page: @params[:page], length: @records.count, 
+                        total: total_filtered, total_pages: total_pages)
     end
     
     def search_records(searched)
@@ -38,10 +41,3 @@ module Admin
     end
   end
 end
-
-# o service é o PORO (Pure and Old Ruby Object), um objeto puro do Ruby
-
-# dig é para acessar uma chave dentro do hash. Na linha 12, é acessado o atributo name, 
-# dentro do hash search, que por sua vez, está dentro de params
-
-# to_h = transforma um array para hash
