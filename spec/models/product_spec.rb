@@ -11,6 +11,7 @@ RSpec.describe Product, type: :model do
   it { is_expected.to validate_presence_of(:image) }
   it { is_expected.to belong_to :productable }
   it { is_expected.to define_enum_for(:status).with_values({ available: 1, unavailable: 2 }) }
+  it { is_expected.to validate_presence_of(:featured) }
 
   # Queremos uma associação has_many de Product para ProductCategory com remoção de 
   # dependentes. Ou seja, quando Product for removido, todos os registros 
@@ -21,4 +22,10 @@ RSpec.describe Product, type: :model do
 
   it_behaves_like "like searchable concern", :product, :name
   it_behaves_like "paginatable concern", :product
+
+  it "creates as unfeatured by default" do
+    subject.featured = nil
+    subject.save(validate: false)
+    expect(subject.featured).to be_falsey
+  end  
 end

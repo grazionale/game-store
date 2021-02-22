@@ -7,6 +7,7 @@ FactoryBot.define do
     # do arquivo que queremos anexar neste campo
     image { Rack::Test::UploadedFile.new(Rails.root.join("spec/support/images/product_image.png")) }
     status { :available }
+    featured { true }
 
     # O Factory Bot tem um recurso que nos permite alterar um model que está sendo
     # construído antes dele ser criado no banco. Então vamos utililizar isso na factory de Product
