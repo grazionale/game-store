@@ -10,4 +10,5 @@ RSpec.describe Game, type: :model do
   it { is_expected.to have_one :product }
 
   it_behaves_like "paginatable concern", :game
+  it_behaves_like "like searchable concern", :game, :developer
 end
