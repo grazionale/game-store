@@ -27,9 +27,9 @@ module Storefront
 
     def get_available_products
       @records = @records.joins("JOIN games ON productable_type = 'Game' AND productable_id = games.id")
-                         .left_joins(:categories)
-                         .includes(productable: [:game], categories: {})
-                         .where(status: :available)
+                        .left_joins(:categories)
+                        .includes(productable: [:game], categories: {})
+                        .where(status: :available)
     end
     
     def filter_records
@@ -68,7 +68,7 @@ module Storefront
     def set_pagination_attributes(total_filtered)
       total_pages = (total_filtered / @params[:length].to_f).ceil
       @pagination.merge!(page: @params[:page], length: @records.size, 
-                         total: total_filtered, total_pages: total_pages)
+                        total: total_filtered, total_pages: total_pages)
     end
   end
 end
