@@ -19,7 +19,8 @@ RSpec.describe Product, type: :model do
   # associação has_many direto com Category através da associação com ProductCategory
   it { is_expected.to have_many(:product_categories).dependent(:destroy) }
   it { is_expected.to have_many(:categories).through(:product_categories) }
-
+  it { is_expected.to have_many(:wish_items) }
+  
   it_behaves_like "like searchable concern", :product, :name
   it_behaves_like "paginatable concern", :product
 
